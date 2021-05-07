@@ -58,6 +58,16 @@ const Hero = styled.div`
     margin: 0;
     max-width: none;
   }
+  background-image: url('/images/safefarm-banner.png');
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 116px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 116px;
 `
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
@@ -132,28 +142,28 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     <Page>
       <Hero>
         <div>
-        <Heading as="h1" size="xxl" mb="16px">
+        {/* <Heading as="h1" size="xxl" mb="16px">
           SafeFarms
-        </Heading>
-        <ul>
+        </Heading> */}
+        {/* <ul>
           <li>{TranslateString(5800, 'SafeFarms is highly volatile')}</li>
           <li>{TranslateString(4040, 'please do your own research before investing')}</li>
-        </ul>
+        </ul> */}
         </div>
       </Hero>
       <Details>{tokenMode ? <CardNav activeIndex={2} /> : <CardNav activeIndex={1} />}</Details>
       <Divider />
-      <Heading as="h2" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+      {/* <Heading as="h2" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {tokenMode
           ? TranslateString(100020, 'Stake tokens to earn TOFY')
           : TranslateString(3200, 'Stake LP tokens to earn TOFY')}
       </Heading>
       <Heading as="h3" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(100000, 'Deposit Fee will be used to buyback TOFY')}
-      </Heading>
+      </Heading> */}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
-        <Divider />
+        {/* <Divider /> */}
         <FlexLayout>
           <Route exact path={`${path}`}>
             {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
@@ -163,7 +173,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      {/* <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive /> */}
     </Page>
   )
 }

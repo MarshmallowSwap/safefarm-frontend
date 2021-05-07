@@ -37,6 +37,18 @@ const Hero = styled.div`
     margin: 0;
     max-width: none;
   }
+    background-image: url('/images/safefarm-banner.png');
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 116px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 116px;
+  
+  
 `
 
 const Center = styled.div`
@@ -75,13 +87,13 @@ const Home: React.FC = () => {
     <Page>
       <Hero>
         <div>
-          <Heading as="h1" size="xxl" mb="16px">
+          {/* <Heading as="h1" size="xxl" mb="16px">
             SafeFarms
-          </Heading>
-          <ul>
+          </Heading> */}
+          {/* <ul>
             <li>{TranslateString(5800, 'SafeFarms is highly volatile')}</li>
             <li>{TranslateString(4040, 'please do your own research before investing')}</li>
-          </ul>
+          </ul> */}
         </div>
       </Hero>
       <Center>
