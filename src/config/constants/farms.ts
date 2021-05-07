@@ -1,8 +1,6 @@
 import contracts from './contracts'
 import { FarmConfig, QuoteToken } from './types'
 
-// 
-
 const farms: FarmConfig[] = [
   {
     pid: 0,
@@ -36,7 +34,38 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
   },
-
+  {
+    pid: 16,
+    risk: 5,
+    lpSymbol: 'TOFY-MASH LP',
+    lpAddresses: {
+      97: '',
+      56: '0xc36e93F6D92be42E2eAFB009dF74a0eBFeD5c0C2',
+    },
+    tokenSymbol: 'TOFY',
+    tokenAddresses: {
+      97: '',
+      56: '0x3c00f8fcc8791fa78daa4a480095ec7d475781e2',
+    },
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.mash,
+  },
+  {
+    pid: 18,
+    risk: 5,
+    lpSymbol: 'DOGE-MASH LP',
+    lpAddresses: {
+      97: '',
+      56: '0xa624375e27667451BBE0797Ff85F877762Ee44f5',
+    },
+    tokenSymbol: 'DOGE',
+    tokenAddresses: {
+      97: '',
+      56: '0x3c00f8fcc8791fa78daa4a480095ec7d475781e2',
+    },
+    quoteTokenSymbol: QuoteToken.MASH,
+    quoteTokenAdresses: contracts.mash,
+  },
   {
     pid: 4,
     risk: 5,
@@ -140,12 +169,29 @@ const farms: FarmConfig[] = [
     lpSymbol: 'TOFY',
     lpAddresses: {
       97: '',
-      56: '0x6f73FF29E47C0F49d6Db7EF4B2CE9393256a7C7A', // VIKING-BUSD LP
+      56: '0x6f73FF29E47C0F49d6Db7EF4B2CE9393256a7C7A',
     },
     tokenSymbol: 'TOFY',
     tokenAddresses: {
       97: '',
       56: '0xe1f2d89a6c79b4242f300f880e490a70083e9a1c',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
+  {
+    pid: 17,
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'MASH',
+    lpAddresses: {
+      97: '',
+      56: '0x87c182edb12f74d561519ab586205fe6cd75363a',
+    },
+    tokenSymbol: 'MASH',
+    tokenAddresses: {
+      97: '',
+      56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -157,7 +203,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'SAFEMOON',
     lpAddresses: {
       97: '',
-      56: '0xfB7DEb2236815222113D949d935cCA4901531677', // VIKING-BUSD LP
+      56: '0xfB7DEb2236815222113D949d935cCA4901531677',
     },
     tokenSymbol: 'SAFEMOON',
     tokenAddresses: {
@@ -174,7 +220,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'SAFEMARS',
     lpAddresses: {
       97: '',
-      56: '0x620B975e49B5b8f7b24ac8aB2Fa2450a0f6b6004', // VIKING-BUSD LP
+      56: '0x620B975e49B5b8f7b24ac8aB2Fa2450a0f6b6004',
     },
     tokenSymbol: 'SAFEMARS',
     tokenAddresses: {
@@ -191,7 +237,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'ELONGATE',
     lpAddresses: {
       97: '',
-      56: '0xDcBD1aB9E1e2A4DE2fA1f95145B942316851451b', // VIKING-BUSD LP
+      56: '0xDcBD1aB9E1e2A4DE2fA1f95145B942316851451b',
     },
     tokenSymbol: 'ELONGATE',
     tokenAddresses: {
@@ -208,7 +254,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'SAFEGALAXY',
     lpAddresses: {
       97: '',
-      56: '0x6cc655c67eEB1dfcEFf36ed38E03ee4f0fE6A9A7', // VIKING-BUSD LP
+      56: '0x6cc655c67eEB1dfcEFf36ed38E03ee4f0fE6A9A7',
     },
     tokenSymbol: 'SAFEGALAXY',
     tokenAddresses: {
@@ -225,7 +271,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'SAFESTAR',
     lpAddresses: {
       97: '',
-      56: '0x315c31B92a70f5f47B1f23942d08F1d123B11ADD', // VIKING-BUSD LP
+      56: '0x315c31B92a70f5f47B1f23942d08F1d123B11ADD',
     },
     tokenSymbol: 'SAFESTAR',
     tokenAddresses: {
@@ -235,6 +281,8 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
+  
+
 ]
 
 export default farms
