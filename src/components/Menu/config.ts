@@ -21,7 +21,7 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'FArms',
+    label: 'Farms',
     icon: 'FarmIcon',
     href: 'http://marshmallowdefi.com/farms',
   },
