@@ -43,6 +43,7 @@ const Center = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 32px;
 `
 
 const Cards = styled(BaseLayout)`
@@ -68,22 +69,22 @@ const Cards = styled(BaseLayout)`
   }
 `
 
+const HeadImage = styled.img`
+  width: 100%;
+`;
+
 const Home: React.FC = () => {
   const TranslateString = useI18n()
 
   return (
     <Page>
-      <Hero>
+      <HeadImage src='images/safefarm-graphic.png' alt='' />
+      {/* <Hero>
         <div>
           <Heading as="h1" size="xxl" mb="16px">
-            SafeFarms
           </Heading>
-          <ul>
-            <li>{TranslateString(5800, 'SafeFarms is highly volatile')}</li>
-            <li>{TranslateString(4040, 'please do your own research before investing')}</li>
-          </ul>
         </div>
-      </Hero>
+      </Hero> */}
       <Center>
         <CardNav />
       </Center>

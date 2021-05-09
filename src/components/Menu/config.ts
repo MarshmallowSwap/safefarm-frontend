@@ -33,7 +33,7 @@ const config: MenuEntry[] = [
   {
     label: 'SafeFarms',
     icon: 'FarmIcon',
-    href: 'http://safefarms.marshmallowdefi.com/info',
+    href: '/info',
   },
   {
     label: 'Audit',

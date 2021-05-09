@@ -54,9 +54,12 @@ const StyledCardAccent = styled.div`
   z-index: -1;
 `
 
-const FCard = styled.div`
+const FCard = styled.div<{ tokenMode: boolean }>`
   align-self: baseline;
-  background: ${(props) => props.theme.card.background};
+  background-color: ${(props) => props.theme.card.background};
+  background-image: ${( props) => props.tokenMode ? 'url(images/rocket-pool.png)' : 'url(images/astro-farm.png)'};
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 32px;
   box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
   display: flex;
@@ -79,6 +82,14 @@ const ExpandingWrapper = styled.div<{ expanded: boolean }>`
   overflow: hidden;
 `
 
+const BackgroundImage = styled.img`
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+`
+
 interface FarmCardProps {
   farm: FarmWithStakedValue
   removed: boolean
@@ -86,9 +97,10 @@ interface FarmCardProps {
   bnbPrice?: BigNumber
   ethereum?: provider
   account?: string
+  tokenMode: boolean
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account, tokenMode }) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
@@ -126,7 +138,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
 
   return (
-    <FCard>
+    <FCard tokenMode={tokenMode} >
+      {/* <BackgroundImage src='images/astro-farm.png' alt='farm' /> */}
       {farm.tokenSymbol === 'TOFY' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}

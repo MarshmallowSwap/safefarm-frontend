@@ -27,7 +27,7 @@ const Details = styled.div`
   display: flex;
   align-items: center; 
   justify-content: center;
-  
+  margin-top: 32px;
 `
 
 const Hero = styled.div`
@@ -59,6 +59,10 @@ const Hero = styled.div`
     max-width: none;
   }
 `
+
+const HeadImage = styled.img`
+  width: 100%;
+`;
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { path } = useRouteMatch()
@@ -122,38 +126,29 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           cakePrice={cakePrice}
           ethereum={ethereum}
           account={account}
+          tokenMode={!!tokenMode}
         />
       ))
     },
-    [bnbPrice, account, cakePrice, ethereum],
+    [bnbPrice, account, cakePrice, ethereum, tokenMode],
   )
 
   return (
     <Page>
-      <Hero>
-        <div>
-        <Heading as="h1" size="xxl" mb="16px">
-          SafeFarms
-        </Heading>
-        <ul>
-          <li>{TranslateString(5800, 'SafeFarms is highly volatile')}</li>
-          <li>{TranslateString(4040, 'please do your own research before investing')}</li>
-        </ul>
-        </div>
-      </Hero>
+      <HeadImage src='images/safefarm-graphic.png' alt='' />
       <Details>{tokenMode ? <CardNav activeIndex={2} /> : <CardNav activeIndex={1} />}</Details>
       <Divider />
-      <Heading as="h2" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+      {/* <Heading as="h2" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {tokenMode
           ? TranslateString(100020, 'Stake tokens to earn TOFY')
           : TranslateString(3200, 'Stake LP tokens to earn TOFY')}
-      </Heading>
-      <Heading as="h3" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+      </Heading> */}
+      {/* <Heading as="h3" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(100000, 'Deposit Fee will be used to buyback TOFY')}
-      </Heading>
+      </Heading> */}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
-        <Divider />
+        {/* <Divider /> */}
         <FlexLayout>
           <Route exact path={`${path}`}>
             {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
@@ -163,7 +158,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      {/* <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive /> */}
     </Page>
   )
 }
