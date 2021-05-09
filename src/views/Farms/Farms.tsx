@@ -58,6 +58,16 @@ const Hero = styled.div`
     margin: 0;
     max-width: none;
   }
+  background-image: url('/images/safefarm-banner.png');
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 116px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 116px;
 `
 
 const HeadImage = styled.img`
