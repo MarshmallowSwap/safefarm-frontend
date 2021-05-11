@@ -36,6 +36,11 @@ const config: MenuEntry[] = [
     href: '/info',
   },
   {
+    label: 'Launch Pools',
+    icon: 'PoolIcon',
+    href: 'http://marshmallowdefi.com/launch',
+  },
+  {
     label: 'Audit',
     icon: 'AuditIcon',
     href: 'https://marshmallowdefi.com/Audit.pdf',
