@@ -61,6 +61,12 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
           {lpLabel}
         </StyledLinkExternal>
       </Flex>
+      {!removed && (
+        <Flex justifyContent="space-between">
+          <Text>{TranslateString(23, 'Total Liquidity')}:</Text>
+          <Text>{totalValueFormated}</Text>
+        </Flex>
+      )}
       <Flex justifyContent="flex-start">
         <Link external href={bscScanAddress} bold={false}>
           {TranslateString(356, 'View on BscScan')}

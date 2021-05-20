@@ -110,7 +110,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        const cakeRewardPerBlock = new BigNumber(farm.tofyPerBlock || 1).times(new BigNumber(farm.poolWeight)) .div(new BigNumber(10).pow(18))
+        const cakeRewardPerBlock = new BigNumber(farm.tofyPerBlock || 1).times(new BigNumber(farm.poolWeight)).div(new BigNumber(10).pow(18))
         const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
         let apy = cakePrice.times(cakeRewardPerYear);
@@ -121,8 +121,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           totalValue = totalValue.times(bnbPrice);
         }
 
-        if(totalValue.comparedTo(0) > 0){
+        if(totalValue.comparedTo(0) > 0) {
           apy = apy.div(totalValue);
+        }
+
+        if (farm.isTokenOnly) {
+          console.log(`aj : ***** farm.lpSymbol: ${farm.lpSymbol}, lpTotalInQuoteToken: ${farm.lpTotalInQuoteToken}`) 
         }
 
         return { ...farm, apy }

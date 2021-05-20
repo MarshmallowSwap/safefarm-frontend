@@ -29,7 +29,11 @@ const fetchFarms = async () => {
         {
           address: farmConfig.isTokenOnly ? farmConfig.tokenAddresses[CHAIN_ID] : lpAdress,
           name: 'balanceOf',
-          params: [getMasterChefAddress()],
+          params: [farmConfig.masterChefAddresses ? (
+            farmConfig.masterChefAddresses[CHAIN_ID]
+          ) : (
+            getMasterChefAddress()
+          )],
         },
         // Total supply of LP tokens
         {
@@ -61,7 +65,7 @@ const fetchFarms = async () => {
       let lpTotalInQuoteToken;
       let tokenPriceVsQuote;
       if(farmConfig.isTokenOnly){
-        tokenAmount = new BigNumber(lpTokenBalanceMC).div(new BigNumber(10).pow(tokenDecimals));
+        tokenAmount = new BigNumber(lpTokenBalanceMC).div(new BigNumber(10).pow(18));
         if(farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD){
           tokenPriceVsQuote = new BigNumber(1);
         }else{
@@ -93,7 +97,9 @@ const fetchFarms = async () => {
 
       const [info, totalAllocPoint, tofyPerBlock] = await multicall(masterchefABI, [
         {
-          address: getMasterChefAddress(),
+          address: farmConfig.masterChefAddresses ? 
+            farmConfig.masterChefAddresses[CHAIN_ID] : 
+            getMasterChefAddress(),
           name: 'poolInfo',
           params: [farmConfig.pid],
         },

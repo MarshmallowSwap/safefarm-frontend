@@ -81,6 +81,12 @@ const Cards = styled(BaseLayout)`
   }
 `
 
+const ColumFlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+`
+
 const HeadImage = styled.img`
   width: 100%;
 `;
@@ -104,7 +110,10 @@ const Home: React.FC = () => {
       <div>
         <Cards>
           <FarmStakingCard />
-          <CakeStats />
+          <ColumFlexContainer>
+            <CakeStats />
+            <TotalValueLockedCard />
+          </ColumFlexContainer>
         </Cards>
       </div>
     </Page>

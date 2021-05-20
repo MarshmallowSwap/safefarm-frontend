@@ -27,6 +27,9 @@ export default {
     56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
     97: '',
   },
+  busdt: {
+    56: '0x55d398326f99059ff775485246999027b3197955'
+  },
   mash: {
     56: '0x787732f27d18495494cea3792ed7946bbcff8db2',
     97: '',
