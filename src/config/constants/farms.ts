@@ -162,23 +162,23 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
-  {
-    pid: 2,
-    risk: 5,
-    isTokenOnly: true,
-    lpSymbol: 'TOFY',
-    lpAddresses: {
-      97: '',
-      56: '0x6f73FF29E47C0F49d6Db7EF4B2CE9393256a7C7A',
-    },
-    tokenSymbol: 'TOFY',
-    tokenAddresses: {
-      97: '',
-      56: '0xe1f2d89a6c79b4242f300f880e490a70083e9a1c',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
-  },
+  // {
+  //   pid: 2,
+  //   risk: 5,
+  //   isTokenOnly: true,
+  //   lpSymbol: 'TOFY',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0x6f73FF29E47C0F49d6Db7EF4B2CE9393256a7C7A',
+  //   },
+  //   tokenSymbol: 'TOFY',
+  //   tokenAddresses: {
+  //     97: '',
+  //     56: '0xe1f2d89a6c79b4242f300f880e490a70083e9a1c',
+  //   },
+  //   quoteTokenSymbol: QuoteToken.BUSD,
+  //   quoteTokenAdresses: contracts.busd,
+  // },
   {
     pid: 17,
     risk: 5,
@@ -196,23 +196,23 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
-  {
-    pid: 9,
-    risk: 5,
-    isTokenOnly: true,
-    lpSymbol: 'SAFEMOON',
-    lpAddresses: {
-      97: '',
-      56: '0xfB7DEb2236815222113D949d935cCA4901531677',
-    },
-    tokenSymbol: 'SAFEMOON',
-    tokenAddresses: {
-      97: '',
-      56: '0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busdt,
-  },
+  // {
+  //   pid: 9,
+  //   risk: 5,
+  //   isTokenOnly: true,
+  //   lpSymbol: 'SAFEMOON',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0xfB7DEb2236815222113D949d935cCA4901531677',
+  //   },
+  //   tokenSymbol: 'SAFEMOON',
+  //   tokenAddresses: {
+  //     97: '',
+  //     56: '0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3',
+  //   },
+  //   quoteTokenSymbol: QuoteToken.BUSD,
+  //   quoteTokenAdresses: contracts.busdt,
+  // },
   {
     pid: 10,
     risk: 5,
