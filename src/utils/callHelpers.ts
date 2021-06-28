@@ -39,8 +39,13 @@ export const sousStakeBnb = async (sousChefContract, amount, account) => {
 }
 
 export const unstake = async (masterChefContract, pid, amount, account) => {
+  let decimal = 18;
+  if (pid === 9) {
+    decimal = 9;
+  }
+
   return masterChefContract.methods
-    .withdraw(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+    .withdraw(pid, new BigNumber(amount).times(new BigNumber(10).pow(decimal)).toString())
     .send({ from: account })
     .on('transactionHash', (tx) => {
       return tx.transactionHash
