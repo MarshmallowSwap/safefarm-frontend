@@ -8,8 +8,12 @@ export const approve = async (lpContract, masterChefContract, account) => {
 }
 
 export const stake = async (masterChefContract, pid, amount, account) => {
+  let decimal = 18;
+  if (pid === 9) {
+    decimal = 9;
+  }
   return masterChefContract.methods
-    .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+    .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(decimal)).toString())
     .send({ from: account })
     .on('transactionHash', (tx) => {
       return tx.transactionHash

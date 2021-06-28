@@ -125,10 +125,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           apy = apy.div(totalValue);
         }
 
-        if (farm.isTokenOnly) {
-          console.log(`aj : ***** farm.lpSymbol: ${farm.lpSymbol}, lpTotalInQuoteToken: ${farm.lpTotalInQuoteToken}`) 
-        }
-
         return { ...farm, apy }
       })
       return farmsToDisplayWithAPY.map((farm) => (
